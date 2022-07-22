@@ -1,0 +1,66 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+<div style="text-align: center">
+    <h2>Consulta de Calificaciones por Alumno</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <br>
+        <br>
+        <br>
+               <div id="custom-search-input">
+                    <div class="col-md-12" style="text-align: center">
+                        <input type="text" class="search-query" placeholder=""  name="alumno" [(ngModel)]="idalumno"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger" type="button" (click)="findAllCalificaciones()">
+                                <span class=" glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+    </div>
+    </div>
+    <br>
+    <br>
+<div class="container">
+<div class="container">
+    <div class="row col-md-8 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>IdCalificacion</th>
+            <th>IdUsuario</th>
+            <th>Nombre</th>
+            <th>Apellido_Paterno</th>
+            <th>Materia</th>
+            <th>Calificacion</th>
+            <th>Fecha_Registro</th>
+            <th>Promedio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let calif of calificaciones">
+            <td>{{calif.idCalificacion}}</td>
+            <td>{{calif.idUsuario}}</td>
+            <td>{{calif.nombre}}</td>
+            <td>{{calif.ap_paterno}}</td>
+            <td>{{calif.materia}}</td>
+            <td>{{calif.calificacion}}</td>
+            <td>{{calif.fecha_registro}}</td>
+            <td>{{calif.promedio}}</td>
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteCalificacion(calif.idCalificacion)"><span class="glyphicon glyphicon-remove"></span> BorrarCalificacion</button></td>
+          </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
+
+
+
