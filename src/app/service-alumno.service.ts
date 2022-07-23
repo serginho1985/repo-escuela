@@ -11,15 +11,15 @@ export class ServiceAlumnoService {
 
   constructor(private http:HttpClient) { }
 
-  server="https://app-escuela1.herokuapp.com/api/altaAlumnos1"
-  local="http://localhost:5000/api/alumnos"
+  URL_SERVER:string="https://app-escuela1.herokuapp.com";
+  //URL_SERVER:string="http://localhost:5000";
 
   public doRegistration(user: User){
-    return this.http.post("https://app-escuela1.herokuapp.com/api/altaAlumnos1",user,{responseType:'text' as 'json'});
+    return this.http.post(this.URL_SERVER+"/api/altaAlumnos1",user,{responseType:'text' as 'json'});
   }
 
   public getUsers(){
-    return this.http.get("https://app-escuela1.herokuapp.com/api/alumnos");
+    return this.http.get(this.URL_SERVER+"/api/alumnos");
   }
 
   

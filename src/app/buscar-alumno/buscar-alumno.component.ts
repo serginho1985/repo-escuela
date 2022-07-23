@@ -21,7 +21,7 @@ export class BuscarAlumnoComponent implements OnInit {
  }
 
   ngOnInit() {
-    
+    this.findAllUsers();
   }
 
 

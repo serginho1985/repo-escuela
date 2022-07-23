@@ -6,6 +6,7 @@ import { AltaMateriaComponent } from './alta-materia/alta-materia.component';
 import { BuscarAlumnoComponent } from './buscar-alumno/buscar-alumno.component';
 import { BuscarCalificacionComponent } from './buscar-calificacion/buscar-calificacion.component';
 import { BuscarMateriaComponent } from './buscar-materia/buscar-materia.component';
+import { EditarCalificacionComponent } from './editar-calificacion/editar-calificacion.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"altaAlumno",pathMatch:"full"},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"buscarMateria",component:BuscarMateriaComponent},
   {path:"altaMateria",component:AltaMateriaComponent}, 
   {path:"altaCalificacion",component:AltaCalificacionComponent}, 
-  {path:"buscarCalificacion",component:BuscarCalificacionComponent}
+  {path:"buscarCalificacion",component:BuscarCalificacionComponent},
+  { path: 'editarCalificacion/:id', component: EditarCalificacionComponent }
 
 ];
 

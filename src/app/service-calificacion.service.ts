@@ -9,27 +9,35 @@ export class ServiceCalificacionService {
 
   constructor(private http:HttpClient) { }
 
-  server="https://app-escuela1.herokuapp.com/api/altaCalificacion"
-  local="http://localhost:5000/api/calificaciones/2"
+  URL_SERVER:string="https://app-escuela1.herokuapp.com";
+  //URL_SERVER:string="http://localhost:5000";
 
   public doRegistration(calif: Calificacion){
-    return this.http.post("https://app-escuela1.herokuapp.com/api/altaCalificacion",calif,{responseType:'text' as 'json'});
+    return this.http.post(this.URL_SERVER+"/api/altaCalificacion",calif,{responseType:'text' as 'json'});
   }
 
   public getCalificaciones(id: number){
-    return this.http.get("https://app-escuela1.herokuapp.com/api/calificaciones/"+id);
+    return this.http.get(this.URL_SERVER+"/api/calificaciones/"+id);
   }
 
   public getAlumnos(){
-    return this.http.get("https://app-escuela1.herokuapp.com/api/alumnos");
+    return this.http.get(this.URL_SERVER+"/api/alumnos");
   }
 
   public getMaterias(){
-    return this.http.get("https://app-escuela1.herokuapp.com/api/materias");
+    return this.http.get(this.URL_SERVER+"/api/materias");
   }
 
   public deleteCalif(id: number){
-    return this.http.get("https://app-escuela1.herokuapp.com/api/borrarCalificacion/"+id);
+    return this.http.delete(this.URL_SERVER+"/api/borrarCalificacion/"+id);
+  }
+
+  public updateCalif(id: number, calif: Calificacion){
+    return this.http.put(this.URL_SERVER+"/api/actualizarCalificacion/"+id,calif,{responseType:'text' as 'json'});
+  }
+
+  public getCalificacion(id: number){
+    return this.http.get(this.URL_SERVER+"/api/calificacion/"+id);
   }
 
 

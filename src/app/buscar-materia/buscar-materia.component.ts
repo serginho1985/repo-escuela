@@ -21,7 +21,7 @@ export class BuscarMateriaComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.findAllMaterias();
   }
 
 }

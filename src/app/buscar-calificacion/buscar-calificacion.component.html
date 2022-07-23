@@ -7,17 +7,16 @@
     <h1>{{message}}</h1>
 </div>
 <div style="text-align: center">
-    <h2>Consulta de Calificaciones por Alumno</h2>
+    <h2>Consulta de Calificaciones por Id de Alumno</h2>
 </div>
 
 <div class="container">
     <div class="row">
         <br>
         <br>
-        <br>
                <div id="custom-search-input">
                     <div class="col-md-12" style="text-align: center">
-                        <input type="text" class="search-query" placeholder=""  name="alumno" [(ngModel)]="idalumno"/>
+                        <input type="text" class="search-query" placeholder="Introduce Id de Alumno"  name="alumno" [(ngModel)]="idalumno"/>
                         <span class="input-group-btn">
                             <button class="btn btn-danger" type="button" (click)="findAllCalificaciones()">
                                 <span class=" glyphicon glyphicon-search"></span>
@@ -27,15 +26,13 @@
                 </div>
     </div>
     </div>
-    <br>
-    <br>
 <div class="container">
 <div class="container">
-    <div class="row col-md-8 col-md-offset-2 custyle">
+    <div class="row col-md-9 col-md-offset-2 custyle">
     <table class="table table-striped custab">
     <thead>
         <tr>
-            <th>IdCalificacion</th>
+            <th>Id</th>
             <th>IdUsuario</th>
             <th>Nombre</th>
             <th>Apellido_Paterno</th>
@@ -55,12 +52,19 @@
             <td>{{calif.calificacion}}</td>
             <td>{{calif.fecha_registro}}</td>
             <td>{{calif.promedio}}</td>
-            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteCalificacion(calif.idCalificacion)"><span class="glyphicon glyphicon-remove"></span> BorrarCalificacion</button></td>
+            
+            <td class="text-center"><a class="btn btn-primary btn-xs" [routerLink]="['/editarCalificacion', calif.idCalificacion]"><span class="glyphicon glyphicon-remove"></span> Editar</a></td>
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteCalificacion(calif.idCalificacion)"><span class="glyphicon glyphicon-remove"></span> Borrar</button></td>
           </tr>
     </tbody>
     </table>
     </div>
 </div>
+<br>
+<br>
+<br>
+
+
 
 
 
